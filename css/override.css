@@ -14,6 +14,9 @@ body{
     padding-bottom: 0;
   }
 }
+h1{
+  font-size: 60px;
+}
 menu{
   background-color: #293133;
   margin:0;
@@ -49,11 +52,12 @@ footer{
   position: fixed;
   bottom: 60px;
   right: 0;
-  left: 0;
+  left: 0px;
   padding: 15px 0;
 }
 @media screen and (min-width: 768px) {
   footer{
+    left: 90px;
     bottom: 0;
   }
 }
