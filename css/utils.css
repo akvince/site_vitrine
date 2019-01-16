@@ -1,0 +1,33 @@
+/** utils **/
+.text-center{
+  text-align: center;
+}
+.font-small{
+  font-size: 12px;
+}
+.font-large{
+  font-size: 20px;
+}
+.flex{
+  display: flex;
+}
+.flex-around{
+    justify-content: space-around;
+}
+.flex-middle{
+  align-items: center;
+}
+/** panel **/
+.panel.active{
+  display: block;
+}
+.badge{
+    width: 40px;
+    background-color: #293133;
+    padding: 15px;
+    border-radius: 190px;
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 5px;
+}

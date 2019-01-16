@@ -1,0 +1,59 @@
+body, html{
+  margin:0;
+  padding:0;
+  color: #293133;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  padding-left: 0;
+  padding-bottom: 60px;
+}
+@media screen and (min-width: 768px) {
+  body{
+    padding-left: 90px;
+    padding-bottom: 0;
+  }
+}
+menu{
+  background-color: #293133;
+  margin:0;
+  padding:0;
+  color: #fff;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 60px;
+  flex-direction: row;
+}
+@media screen and (min-width: 768px) {
+  menu {
+      width: 90px;
+      left: 0;
+      height: 100%;
+      flex-direction: column;
+  }
+}
+li{
+  cursor: pointer;
+  list-style: none;
+}
+footer{
+  color: gray;
+  z-index: 3;
+  position: fixed;
+  bottom: 60px;
+  right: 0;
+  left: 0;
+  padding: 15px 0;
+}
+@media screen and (min-width: 768px) {
+  footer{
+    bottom: 0;
+  }
+}
