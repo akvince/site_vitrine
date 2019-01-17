@@ -10,19 +10,26 @@
 .first{
   margin:0;
   padding:15px;
-  background-image: none;
+  background: linear-gradient(
+             rgba(128,128,128, .2),
+             rgba(128,128,128, .7)),
+             url("../img/bg4.jpg") no-repeat;
   background-color: #293133;
   opacity: 0.9;
-  height:100vh;
   display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   justify-content: flex-end;
 }
 @media screen and (min-width: 768px) {
   .first{
     padding:0;
     background: linear-gradient(
-               rgba(128,128,128, .5),
-               rgba(128,128,128, .5)),
+               rgba(128,128,128, .2),
+               rgba(128,128,128, .7)),
                url("../img/bg4.jpg") no-repeat;
    background-position: right bottom;
    background-size: cover;
