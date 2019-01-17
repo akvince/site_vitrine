@@ -2,6 +2,12 @@
 .text-center{
   text-align: center;
 }
+.text-left{
+  text-align: left;
+}
+.float-right{
+  float: right;
+}
 .font-small{
   font-size: 12px;
 }
