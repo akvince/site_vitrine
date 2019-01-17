@@ -8,6 +8,9 @@
 .font-large{
   font-size: 20px;
 }
+.margin-b{
+  margin-bottom: 20px;
+}
 .flex{
   display: flex;
 }
