@@ -46,6 +46,10 @@ li{
   cursor: pointer;
   list-style: none;
 }
+a{
+  text-decoration: none;
+  color: #293133;
+}
 footer{
   color: gray;
   z-index: 3;
