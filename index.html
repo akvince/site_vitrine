@@ -53,12 +53,10 @@
               <i class="fas fa-user"></i>
               <span class="pict-text">Confidentiel</span>
             </div>
-            <div>
-              <div>Nom & Prénom : <span class="">Deflandre Vincent</span></div>
-              <div>Date de naissance : <span class="">19/07/1990</span></div>
-              <div>Profession : <span class="">Développeur front-end</span></div>
-              <div>Affectation : <span class="">IT-Room</span></div>
-              <div>Mission actuelle : <span class="">La Redoute</span></div>
+            <div id="presentation">
+              <div v-for="info in infos">
+                <div>{{info.id}} <span>{{info.key}}</span></div>
+              </div>
             </div>
           </div>
         </div>
