@@ -30,34 +30,13 @@
   <body>
 
     <!-- menu -->
-    <menu>
+    <menu id="menu">
 
-      <li class="panel-button text-center" data-id="home">
+      <li v-for="entry in entries" v-on:click="activeItem" class="panel-button text-center" v-bind:data-id="entry.dataId">
         <div>
-          <i class="icon-menu fas fa-home"></i>
+          <i v-bind:class="entry.icon"></i>
         </div>
-        <div class="font-small">acceuil</div>
-      </li>
-
-      <li class="panel-button text-center" data-id="skill">
-        <div>
-          <i class="icon-menu fas fa-wrench"></i>
-        </div>
-        <div class="font-small">compétences</div>
-      </li>
-
-      <li class="panel-button text-center" data-id="project">
-        <div>
-          <i class="icon-menu fas fa-code-branch"></i>
-        </div>
-        <div class="font-small">Projets</div>
-      </li>
-
-      <li class="panel-button text-center" data-id="contact">
-        <div class="text-center">
-          <i class="icon-menu fas fa-at"></i>
-        </div>
-        <div class="font-small">contact</div>
+        <div class="font-small">{{entry.name}}<div>
       </li>
 
     </menu>

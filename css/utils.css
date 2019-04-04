@@ -30,6 +30,10 @@
 .panel.active{
   display: block;
 }
+.panel-button.active{
+  font-weight: bold;
+  color: lightgray;
+}
 .badge{
     width: 40px;
     background-color: #293133;
