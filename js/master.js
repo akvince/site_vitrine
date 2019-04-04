@@ -9,8 +9,9 @@ $(function(){
 
     $('.panel-button').on('click', function(){
       id = $(this).data('id');
-
+      $('.panel, .panel-button').removeClass('active');
       $('#' + id).addClass('active');
+      $(this).addClass('active');
       window.location.hash = id;
     });
 
