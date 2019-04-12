@@ -55,16 +55,6 @@
   background-color: #293133;
   padding: 20px 40px;
 }
-.pict-text{
-  color: #000;
-  font-weight: bold;
-  transform: rotate(-45deg);
-  top: 42%;
-  right: 7%;
-  font-size: 30px;
-  position: absolute;
-}
-
 .panel{
   display: none;
 }
