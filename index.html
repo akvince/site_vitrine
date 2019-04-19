@@ -113,7 +113,14 @@
 
     <!-- project -->
     <div id="project" class="panel part3">
-      je suis du contenu project
+      <div id="projects">
+        <div v-for="project in projects">
+          <div>
+            <h2>{{project.name}}</h2>
+             <div>{{project.description}} </div>
+             <div>compétences mobilisées : {{project.skill}}</div>
+        </div>
+      </div>
     </div>
 
     <!-- contact -->

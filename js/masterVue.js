@@ -22,3 +22,24 @@ var presentation = new Vue({
     ]
   }
 })
+
+var project = new Vue({
+  el: '#projects',
+  data:{
+    projects: [
+      {
+        name:'La Redoute (régie)',
+        description: 'Maintenance et intégration de nouvelles fonctionnalités',
+        skill: 'HTML, CSS, Bootstrap, jQuery, environnement .Net',
+        hasLink: false
+      },
+      {
+        name:'Sogood People',
+        description: 'Integration responsive',
+        link:'http://www.sogood-people.fr/',
+        hasLink: true,
+        skill:'HTML, CSS, Bootstrap, jQuery, Environnement Symphony (twig)'
+      }
+    ]
+  }
+})
