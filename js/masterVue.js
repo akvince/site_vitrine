@@ -5,6 +5,7 @@ var menu = new Vue({
       {name: 'acceuil', dataId: 'home', icon: 'icon-menu fas fa-home'},
       {name: 'compétences', dataId: 'skill', icon: 'icon-menu fas fa-wrench'},
       {name: 'Projets', dataId: 'project', icon: 'icon-menu fas fa-code-branch'},
+      {name: 'Demo', dataId: 'demo', icon: 'icon-menu fas fa-laptop-code'},
       {name: 'contact', dataId: 'contact', icon: 'icon-menu fas fa-at'}
     ]
   }
