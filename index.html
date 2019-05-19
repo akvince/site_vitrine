@@ -31,114 +31,119 @@
 
     <!-- menu -->
     <menu id="menu">
-
       <div v-for="entry in entries" class="panel-button text-center" v-bind:data-id="entry.dataId">
         <div>
           <i v-bind:class="entry.icon"></i>
         </div>
         <div class="font-small">{{entry.name}}<div>
       </div>
-
     </menu>
 
-    <!-- home -->
-    <div id="home" class="panel first">
-      <div class="flex flex-around flex-middle">
-        <div class="first-content">
-          <div class="text-center margin-b">
-            <i class="fas fa-exclamation-triangle"></i> Work in progress <i class="fas fa-exclamation-triangle"></i>
-          </div>
-          <div class="flex">
-            <div class="pict">
-              <i class="fas fa-user"></i>
+    <div class="content">
+      <!-- home -->
+      <div id="home" class="panel first">
+        <div class="flex flex-around flex-middle">
+          <div class="first-content">
+            <div class="text-center margin-b">
+              <i class="fas fa-exclamation-triangle"></i> Work in progress <i class="fas fa-exclamation-triangle"></i>
             </div>
-            <div id="presentation">
-              <div v-for="info in infos">
-                <div>{{info.id}} <span>{{info.key}}</span></div>
+            <div class="flex">
+              <div class="pict">
+                <i class="fas fa-user"></i>
+              </div>
+              <div id="presentation">
+                <div v-for="info in infos">
+                  <div>{{info.id}} <span>{{info.key}}</span></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- skill -->
-    <div id="skill" class="panel part2">
-      <h2 class="text-center">Compétences</h2>
-      <div class="flex flex-around flex-middle font-large margin-b">
-        <div class="html text-center">
-          <i class="fab fa-html5 badge"></i>
-          <div>HTML</div>
+      <!-- skill -->
+      <div id="skill" class="panel part2">
+        <h2 class="text-center">Compétences</h2>
+        <div class="flex flex-around flex-middle font-large margin-b">
+          <div class="html text-center">
+            <i class="fab fa-html5 badge"></i>
+            <div>HTML</div>
+          </div>
+          <div class="css text-center">
+            <i class="fab fa-css3-alt badge"></i>
+            <div>CSS</div>
+          </div>
+          <div class="sass text-center">
+            <i class="fab fa-sass badge"></i>
+            <div>Sass</div>
+          </div>
+          <div class="javascript text-center">
+            <i class="fab fa-js badge"></i>
+            <div>Javascript</div>
+          </div>
         </div>
-        <div class="css text-center">
-          <i class="fab fa-css3-alt badge"></i>
-          <div>CSS</div>
+        <div class="flex flex-around flex-middle font-large">
+          <div class="gulp text-center">
+            <i class="fab fa-gulp badge"></i>
+            <div>Gulp</div>
+          </div>
+          <div class="ubntu text-center">
+            <i class="fab fa-linux badge"></i>
+            <div>Linux</div>
+          </div>
         </div>
-        <div class="sass text-center">
-          <i class="fab fa-sass badge"></i>
-          <div>Sass</div>
-        </div>
-        <div class="javascript text-center">
-          <i class="fab fa-js badge"></i>
-          <div>Javascript</div>
+
+        <h2 class="text-center">En dehors du travail</h2>
+        <div class="flex flex-around flex-middle font-large">
+          <div class="muscu text-center">
+            <i class="fas fa-dumbbell badge"></i>
+            <div>Musculation</div>
+          </div>
+          <div class="game text-center">
+            <i class="fas fa-gamepad badge"></i>
+            <div>Jeux vidéo</div>
+          </div>
+          <div class="magic text-center">
+            <i class="fab fa-wizards-of-the-coast badge"></i>
+            <div>Magic</div>
+          </div>
         </div>
       </div>
-      <div class="flex flex-around flex-middle font-large">
-        <div class="gulp text-center">
-          <i class="fab fa-gulp badge"></i>
-          <div>Gulp</div>
-        </div>
-        <div class="ubntu text-center">
-          <i class="fab fa-linux badge"></i>
-          <div>Linux</div>
+
+      <!-- project -->
+      <div id="project" class="panel part3">
+        je suis du contenu project
+      </div>
+
+      <!-- contact -->
+      <div id="contact" class="panel part4">
+        <h2 class="text-center">Contactez-moi</h2>
+        <div class="flex flex-around flex-middle font-large text-center">
+          <div class="linkedin">
+            <i class="far fa-envelope badge"></i>
+            <div>Mail</div>
+          </div>
+          <div class="linkedin">
+            <a rel="noreferrer" href="https://www.linkedin.com/in/deflandre-vincent-frontend/" target="_blank">
+              <i class="fab fa-linkedin-in badge"></i>
+              <div>LinkedIn</div>
+            </a>
+          </div>
+          <div class="twitter text-center">
+            <a rel="noreferrer" href="https://twitter.com/kiravince?lang=fr" target="_blank">
+              <i class="fab fa-twitter badge"></i>
+              <div>Twitter</div>
+            </a>
+          </div>
         </div>
       </div>
 
-      <h2 class="text-center">En dehors du travail</h2>
-      <div class="flex flex-around flex-middle font-large">
-        <div class="muscu text-center">
-          <i class="fas fa-dumbbell badge"></i>
-          <div>Musculation</div>
-        </div>
-        <div class="game text-center">
-          <i class="fas fa-gamepad badge"></i>
-          <div>Jeux vidéo</div>
-        </div>
-        <div class="magic text-center">
-          <i class="fab fa-wizards-of-the-coast badge"></i>
-          <div>Magic</div>
-        </div>
-      </div>
     </div>
 
-    <!-- project -->
-    <div id="project" class="panel part3">
-      je suis du contenu project
-    </div>
+    <!-- load content -->
+    <div class="load-content">
 
-    <!-- contact -->
-    <div id="contact" class="panel part4">
-      <h2 class="text-center">Contactez-moi</h2>
-      <div class="flex flex-around flex-middle font-large text-center">
-        <div class="linkedin">
-          <i class="far fa-envelope badge"></i>
-          <div>Mail</div>
-        </div>
-        <div class="linkedin">
-          <a rel="noreferrer" href="https://www.linkedin.com/in/deflandre-vincent-frontend/" target="_blank">
-            <i class="fab fa-linkedin-in badge"></i>
-            <div>LinkedIn</div>
-          </a>
-        </div>
-        <div class="twitter text-center">
-          <a rel="noreferrer" href="https://twitter.com/kiravince?lang=fr" target="_blank">
-            <i class="fab fa-twitter badge"></i>
-            <div>Twitter</div>
-          </a>
-        </div>
-      </div>
     </div>
-
     <!-- footer -->
     <footer>
       <div class="text-center">
