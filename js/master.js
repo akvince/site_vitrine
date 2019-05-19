@@ -27,7 +27,7 @@ $(function(){
     var loadPage = function(url){
       hideMainContent();
       $.get(url, function(data){
-      	var content = data.documentElement.innerHTML;
+      	var content = data;
       	$loadContent.html(content);
       });
     }
