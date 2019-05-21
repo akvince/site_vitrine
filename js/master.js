@@ -36,7 +36,7 @@ $(function(){
       var id = $(this).data('id');
       changeHash(id);
       if(id === "demo"){
-        loadPage('views/plugins/stepPassword.html');
+        window.location.href = 'views/demo.html';
       }else{
         showMainContent();
         $('.panel, .panel-button').removeClass('active');

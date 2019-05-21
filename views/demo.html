@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../dist/bundle.css">
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="../js/coreObject.js" charset="utf-8"></script>
+    <script src="../js/corePage.js" charset="utf-8"></script>
+    <script src="../js/masterPage.js" charset="utf-8"></script>
+    <script src="../js/plugins/stepPassword.js" charset="utf-8"></script>
+    <script type="text/javascript"  charset="utf-8">
+        $(function () {
+            var blocs = {
+              UiPasswordValidationStep : 'UiPasswordValidationStep'
+            };
+            _page = new masterPage(blocs);
+
+        });
+    </script>
+  </head>
+  <body>
+    <div class="back">
+      <i class="fas fa-chevron-left"></i><a href="/">Retour au site</a>
+    </div>
+    <div>
+      <input type="password" id="passwordInput" placeholder="password"/>
+    </div>
+  </body>
+</html>
