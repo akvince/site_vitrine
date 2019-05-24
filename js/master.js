@@ -1,6 +1,6 @@
 'use strict';
 
-class masterJs {
+class displayPanel {
   constructor() {
     const $content = document.getElementsByClassName('content');
     const $loadContent = document.getElementsByClassName('load-content');
