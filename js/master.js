@@ -1,5 +1,7 @@
-$(function(){
+'use strict';
 
+class masterJs {
+  constructor() {
     const $content = document.getElementsByClassName('content');
     const $loadContent = document.getElementsByClassName('load-content');
     const $panelButton = document.getElementsByClassName('panel-button');
@@ -51,5 +53,6 @@ $(function(){
         }
       });
     });
+  }
 
-});
+};
