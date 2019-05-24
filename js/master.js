@@ -3,12 +3,16 @@ $(function(){
     const $content = document.getElementsByClassName('content');
     const $loadContent = document.getElementsByClassName('load-content');
     const $panelButton = document.getElementsByClassName('panel-button');
+    const $panel = document.getElementsByClassName('panel');
+    const $home = document.getElementById('home');
 
-    if(window.location.hash !== ''){
-      $('.panel, .panel-button').removeClass('active');
-      $(window.location.hash).addClass('active');
-    }else{
-      $('#home').addClass('active');
+    const removePanelClass = () => {
+      Array.from($panelButton).forEach(function(element) {
+        element.classList.remove('active');
+      });
+      Array.from($panel).forEach(function(element) {
+        element.classList.remove('active');
+      });
     }
 
     const showMainContent = () => {
@@ -25,17 +29,25 @@ $(function(){
       window.location.hash = id;
     }
 
+    if(window.location.hash !== ''){
+      removePanelClass();
+      document.getElementById(window.location.hash.split('#')[1]).classList.add('active');
+    }else{
+      $home.classList.add('active');
+    }
+
     Array.from($panelButton).forEach(function(element) {
       element.addEventListener('click', (el) => {
-        var id = el.currentTarget.getAttribute('data-id');
+        var $this = el.currentTarget;
+        var id = $this.getAttribute('data-id');
         changeHash(id);
         if(id === "demo"){
           window.location.href = 'views/demo.html';
         }else{
           showMainContent();
-          $('.panel, .panel-button').removeClass('active');
-          $('#' + id).addClass('active');
-          $(this).addClass('active');
+          removePanelClass();
+          document.getElementById(id).classList.add('active');
+          $this.classList.add('active');
         }
       });
     });
