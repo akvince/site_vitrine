@@ -1,7 +1,8 @@
 $(function(){
 
-    var $content = $('.content');
-    var $loadContent = $('.load-content');
+    const $content = document.getElementsByClassName('content');
+    const $loadContent = document.getElementsByClassName('load-content');
+    const $panelButton = document.getElementsByClassName('panel-button');
 
     if(window.location.hash !== ''){
       $('.panel, .panel-button').removeClass('active');
@@ -10,40 +11,33 @@ $(function(){
       $('#home').addClass('active');
     }
 
-    var showMainContent = function(){
-      $loadContent.hide();
-      $content.show();
+    const showMainContent = () => {
+      $loadContent.hidden = true;
+      $content.hidden = false;
     }
 
-    var hideMainContent = function(){
-      $content.hide();
-      $loadContent.show();
+    const hideMainContent = () => {
+      $content.hidden = true;
+      $loadContent.hidden = false;
     }
 
-    var changeHash = function(id){
+    const changeHash = (id) => {
       window.location.hash = id;
     }
 
-    var loadPage = function(url){
-      hideMainContent();
-      $.get(url, function(data){
-      	var content = data;
-      	$loadContent.html(content);
+    Array.from($panelButton).forEach(function(element) {
+      element.addEventListener('click', (el) => {
+        var id = el.currentTarget.getAttribute('data-id');
+        changeHash(id);
+        if(id === "demo"){
+          window.location.href = 'views/demo.html';
+        }else{
+          showMainContent();
+          $('.panel, .panel-button').removeClass('active');
+          $('#' + id).addClass('active');
+          $(this).addClass('active');
+        }
       });
-    }
-
-    $('.panel-button').on('click', function(){
-      var id = $(this).data('id');
-      changeHash(id);
-      if(id === "demo"){
-        window.location.href = 'views/demo.html';
-      }else{
-        showMainContent();
-        $('.panel, .panel-button').removeClass('active');
-        $('#' + id).addClass('active');
-        $(this).addClass('active');
-      }
-
     });
 
 });
