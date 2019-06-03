@@ -1,57 +1,47 @@
-$(function(){
-  var stepPassword = function(){
+'use strict';
+
+class stepPassword {
+  constructor() {
     console.log('init password validation step');
 
-    var $passwordInput = $('#passwordInput');
-    var $passwordInputVal = $passwordInput.val();
+    var $passwordInput = document.getElementById('passwordInput');
+    var $passwordInputVal = $passwordInput.value;
     var successTick = 'fa-check';
     var unsuccessTick = 'fa-times';
     var passwordMinLength = 8;
 
     /*construct dom to display step password*/
     var constructDom = function(){
-        $passwordInput.after($('<div>',{
-            id:'containerStepValidation',
-            class: 'row'
-        }).append($('<div>',{
-            text: 'Etape de validation de mot de passe',
-            class: 'col-xs-12'
-        })).append($('<div>', {
-            id: 'passwordStepLength',
-            html: '<span class="password-step-tick fas fa-times"></span>' + 'minimum 8 caratères',
-            class: 'col-xs-12 col-sm-6 step-label'
-        })).append($('<div>', {
-            id: 'passwordStepNumber',
-            html: '<span class="password-step-tick fas fa-times"></span>' + 'contient un chiffre',
-            class: 'col-xs-12 col-sm-6 step-label'
-        })).append($('<div>', {
-            id: 'passwordStepLetter',
-            html: '<span class="password-step-tick fas fa-times"></span>' + 'contient une lettre',
-            class: 'col-xs-12 col-sm-6 step-label'
-        })).append($('<div>', {
-            id: 'passwordStepCapital',
-            html: '<span class="password-step-tick fas fa-times"></span>' + 'contient une majuscule',
-            class: 'col-xs-12 col-sm-6 step-label'
-        })));
+        $passwordInput.insertAdjacentHTML('afterend', '<div id="containerStepValidation" class="row"></div>');
+        var $containerStepValidation = document.getElementById('containerStepValidation');
+        $containerStepValidation.insertAdjacentHTML('beforeend', '<div class="col-xs-12">Etape de validation de mot de passe</div>');
+        $containerStepValidation.insertAdjacentHTML('beforeend', '<div id="passwordStepLength" class="col-xs-12 col-sm-6 step-label"><span class="password-step-tick fas fa-times"></span>' + 'minimum 8 caratères</div>');
+        $containerStepValidation.insertAdjacentHTML('beforeend', '<div id="passwordStepNumber" class="col-xs-12 col-sm-6 step-label"><span class="password-step-tick fas fa-times"></span>' + 'contient un chiffre</div>');
+        $containerStepValidation.insertAdjacentHTML('beforeend', '<div id="passwordStepLetter" class="col-xs-12 col-sm-6 step-label"><span class="password-step-tick fas fa-times"></span>' + 'contient une lettre</div>');
+        $containerStepValidation.insertAdjacentHTML('beforeend', '<div id="passwordStepCapital" class="col-xs-12 col-sm-6 step-label"><span class="password-step-tick fas fa-times"></span>' + 'contient une majuscule</div>');
     }
 
     /*change tick el in green if step is valide*/
     var checkedStep = function($tickContainer){
-        $tickContainer.find('.password-step-tick').removeClass(unsuccessTick).addClass(successTick);
+        const $tick = $tickContainer.getElementsByClassName('password-step-tick')
+        $tick[0].classList.remove(unsuccessTick)
+        $tick[0].classList.add(successTick);
     }
 
     /*change tick el in black if step is not valide*/
     var uncheckedStep = function($tickContainer){
-        $tickContainer.find('.password-step-tick').removeClass(successTick).addClass(unsuccessTick);
+        const $tick = $tickContainer.getElementsByClassName('password-step-tick')
+        $tick[0].classList.remove(successTick)
+        $tick[0].classList.add(unsuccessTick);
     }
 
     /*
      * method check if condition is
      * exemple => $selector = "#selector" and regexp = /[A-Z]/
     */
-    var check = function($selector, regexp){
-        var $iconStep = $($selector);
-        if(regexp.test($passwordInput.val())){
+    var check = function(selector, regexp){
+        const $iconStep = document.getElementById(selector);
+        if(regexp.test($passwordInput.value)){
             checkedStep($iconStep);
         }else{
             uncheckedStep($iconStep);
@@ -60,23 +50,23 @@ $(function(){
 
     /*check if password contains one letter*/
     var checkLetter = function(){
-        check('#passwordStepLetter', /[a-z]/);
+        check('passwordStepLetter', /[a-z]/);
     }
 
     /*check if password contains one number*/
     var checkNumber = function(){
-        check('#passwordStepNumber', /\d+/);
+        check('passwordStepNumber', /\d+/);
     }
 
     /*check if password contains one capital letter*/
     var checkCapital = function(){
-        check('#passwordStepCapital', /[A-Z]/);
+        check('passwordStepCapital', /[A-Z]/);
     }
 
     /*check if password contains 8 or more charaters*/
     var checkLength = function(){
-        var $iconStepLength = $('#passwordStepLength');
-        if($passwordInput.val().length >= passwordMinLength){
+        const $iconStepLength = document.getElementById('passwordStepLength');
+        if($passwordInput.value.length >= passwordMinLength){
             checkedStep($iconStepLength);
         }else{
             uncheckedStep($iconStepLength);
@@ -84,7 +74,7 @@ $(function(){
     }
 
     /*verify all status step*/
-    var checkAllStep = function(){
+    const checkAllStep = function(){
         checkLetter();
         checkCapital();
         checkNumber();
@@ -94,7 +84,7 @@ $(function(){
         // Public methods
 
     // Events
-    $passwordInput.on('keyup', function(){
+    $passwordInput.addEventListener('keyup', function(){
         checkAllStep();
     });
 
@@ -102,14 +92,16 @@ $(function(){
     constructDom();
 
     /*style*/
-    $('.step-label').css('font-size', '14px');
-    $('.password-step-tick ').css('vertical-align', 'middle');
+    const $stepLabel = document.getElementsByClassName('step-label');
+    const $passwordStepTick = document.getElementsByClassName('password-step-tick');
+    Array.from($stepLabel).forEach(function(element) {
+        var $this = element;
+        $this.style.fontSize = '14px';
+    });
+    Array.from($passwordStepTick).forEach(function(element) {
+        var $this = element;
+        $this.style.verticalAlign = 'middle';
+    });
   }
 
-  // Public methods
-
-  // Events
-
-  // Init
-  stepPassword();
-});
+}
