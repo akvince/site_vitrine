@@ -31,7 +31,7 @@ class displayPanel {
       window.location.hash = id;
     }
 
-    if(window.location.hash !== ''){
+    if(window.location.hash !== '' && window.location.hash !== '#demo'){
       removePanelClass();
       document.getElementById(window.location.hash.split('#')[1]).classList.add('active');
     }else{
