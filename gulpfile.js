@@ -1,20 +1,30 @@
-let gulp = require('gulp');
-gulp.task('default', function () {
-    console.log('Hello Gulp!')
-});
+'use strict';
 
-let concatCss = require('gulp-concat-css');
-gulp.task('concat-css', function () {
-  return gulp.src('./css/*.css')
-    .pipe(concatCss("./css/bundle.css"))
+const gulp = require('gulp');
+const { dest, series, src, watch } = require('gulp');
+
+const concatCss = require('gulp-concat-css');
+const cleanCSS = require('gulp-clean-css');
+
+const concaCss = () => {
+  return src('./css/*.css')
+    .pipe(concatCss("./css/concat/bundle.css"))
     .pipe(gulp.dest('./'));
-});
+};
+exports.concaCss = concaCss;
 
-let cleanCSS = require('gulp-clean-css');
-gulp.task('minify-css', () => {
-  return gulp.src('./css/bundle.css')
+const minifyCss = () => {
+  return src('./css/concat/bundle.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('./dist/'));
-});
+};
+exports.minifyCss = minifyCss;
 
-gulp.task('buildCss', gulp.series('concat-css', 'minify-css'));
+exports['buildCss'] = series(concaCss, minifyCss);
+
+const cssWatch = () => {
+    watch([
+        './css/*.css',
+    ], null, series('buildCss'))
+};
+exports.cssWatch = cssWatch;
