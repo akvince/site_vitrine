@@ -2,6 +2,7 @@
 .badge {
   background-color: transparent;
   vertical-align: sub;
+  margin: 0 auto 5px;
   width: 65px;
   height: 65px;
   border-radius: 190px;
