@@ -19,7 +19,7 @@ const prefixCss = () => {
   .pipe(autoprefixer({
     cascade: true
   }))
-  .pipe(dest('dist'))
+  .pipe(dest('./css/concat/'))
 }
 exports.prefixCss = prefixCss;
 
@@ -30,7 +30,7 @@ const minifyCss = () => {
 };
 exports.minifyCss = minifyCss;
 
-exports['buildCss'] = series(concaCss, minifyCss);
+exports['buildCss'] = series(concaCss, prefixCss, minifyCss);
 
 const cssWatch = () => {
     watch([
