@@ -13,6 +13,16 @@ const concaCss = () => {
 };
 exports.concaCss = concaCss;
 
+const autoprefixer = require('gulp-autoprefixer');
+const prefixCss = () => {
+  return src('./css/concat/bundle.css')
+  .pipe(autoprefixer({
+    cascade: true
+  }))
+  .pipe(dest('dist'))
+}
+exports.prefixCss = prefixCss;
+
 const minifyCss = () => {
   return src('./css/concat/bundle.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
