@@ -3,7 +3,7 @@
   "short_name": "deflandrePortolio",
   "theme_color": "#293133",
   "background_color": "#293133",
-  "display": "browser",
+  "display": "standalone",
   "Scope": "/",
   "start_url": "/",
   "icons": [
